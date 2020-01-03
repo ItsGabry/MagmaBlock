@@ -22,7 +22,7 @@ class MagmaBlockTask extends Task{
 
     public function onRun(int $currentTick) {
         foreach($this->server->getOnlinePlayers() as $player){
-            if ($player->getPosition()->getLevel()->getBlock(new Vector3($player->getX(), $player->getY()-1, $player->getZ()))->getId() == 213){
+            if ($player->getLevel()->getBlock(new Vector3($player->getX(), $player->getY()-1, $player->getZ()))->getId() == 213){
                 $player->attack(new EntityDamageEvent($player, EntityDamageEvent::CAUSE_FIRE,1));
 
             }
