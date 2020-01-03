@@ -23,10 +23,9 @@ class MagmaBlockTask extends Task{
     public function onRun(int $currentTick) {
         public function onRun(int $currentTick) {
         foreach($this->server->getOnlinePlayers() as $player){
-			var_dump($player->getLevel()->getBlockAt($player->getX(),$player->getY()-1,$player->getZ())->getId() === Block::MAGMA);
             if($player->getLevel()->getBlockAt($player->getX(),$player->getY()-1,$player->getZ())->getId() === Block::MAGMA){
-				$player->attack(new EntityDamageEvent($player, EntityDamageEvent::CAUSE_FIRE,1));
-			}
+		    $player->attack(new EntityDamageEvent($player, EntityDamageEvent::CAUSE_FIRE,1));
+	    }
         }
     }
 }
